@@ -237,5 +237,8 @@ public Command getAutonomousCommand(String pathName) {
   {
     drivebase.setMotorBrake(coast);
   }
+  public SparkMax getLiftMotor() {
+    return liftMotor;
+}
   
 }

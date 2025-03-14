@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
 import edu.wpi.first.wpilibj.Servo;
-// import edu.wpi.first.cameraserver.CameraServer;
+//import edu.wpi.first.cameraserver.CameraServer;
 
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.SparkMax;
@@ -45,7 +45,7 @@ private TalonFX BallMotorI;
 private SparkMax CSource;
 
 //Lift the Motor//
-private SparkMax LiftMotor;
+private SparkMax liftMotor;
 
 
 
@@ -92,6 +92,7 @@ public Robot() {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
+    liftMotor = m_robotContainer.getLiftMotor();
 
     // Create a timer to disable motor brake a few seconds after disable.  This will let the robot stop
     // immediately when disabled, but then also let it be pushed more 
@@ -194,13 +195,13 @@ public Robot() {
       // // Set the motor speed based on trigger values
       if (Operater.getPOV() == 0) {
         // Move motor forward
-        LiftMotor.set(-.9); // Scale speed down to 50%
+        liftMotor.set(-.9); // Scale speed down to 50%
     } else if (Operater.getPOV() == 180) {
         // Move motor backward
-        LiftMotor.set(.97); // Scale speed down to 50%
+        liftMotor.set(.97); // Scale speed down to 50%
     } else  {
         // Stop motor
-        LiftMotor.set(0);
+        liftMotor.set(0);
    }
 
 
