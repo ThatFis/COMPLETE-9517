@@ -54,10 +54,10 @@ private final DoubleSolenoid clawsolenoid = new DoubleSolenoid(PneumaticsModuleT
 //private final DoubleSolenoid Ballsolenoid = new DoubleSolenoid(PneumaticsModuleType.CTRE, 5, 10);
 //private final DoubleSolenoid Armsolenoid = new DoubleSolenoid(PneumaticsModuleType.CTRE, 11, 4);
 
-// private boolean BallOut = false;
+ private boolean BallOut = false;
 // private boolean Process   or = false;
 // private boolean ground = false;
-// private boolean End = false;
+ private boolean End = false;
 
 public Robot() {
   instance = this;
@@ -281,6 +281,31 @@ public Robot() {
 
      
 
+   if(Driver.getRightBumperButtonPressed()){
+
+    End = !End;
+}  
+if (End){
+  
+  Endsolenoid.set(Value.kForward);
+ 
+} else {
+  Endsolenoid.set(Value.kReverse);
+}
+  
+
+  
+  if(Driver.getYButtonPressed()){
+
+    BallOut = !BallOut;
+}  
+if (BallOut){
+  
+  clawsolenoid.set(Value.kForward);
+ 
+} else {
+  clawsolenoid.set(Value.kReverse);
+}
 
 
 
