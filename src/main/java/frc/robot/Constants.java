@@ -28,7 +28,7 @@ public final class Constants
   public static final double ROBOT_MASS = (148 - 20.3) * 0.453592; // 32lbs * kg per pound
   public static final Matter CHASSIS    = new Matter(new Translation3d(0, 0, Units.inchesToMeters(8)), ROBOT_MASS);
   public static final double LOOP_TIME  = 0.13; //s, 20ms + 110ms sprk max velocity lag
-  public static final double MAX_SPEED  = Units.feetToMeters(12.5);
+  public static final double MAX_SPEED  = Units.feetToMeters(8);
   // Maximum speed of the robot in meters per second, used to limit acceleration.
 
 //  public static final class AutonConstants
@@ -59,11 +59,11 @@ public final class Constants
 
  
 
-  public static final int BallMotorI = 19; // CAN ID for intake ball
-  public static final int BallMotorP = 6;  //CAN ID TO INTAKE BAL
+  //public static final int BallMotorI = 19; // CAN ID for intake ball
+  //public static final int BallMotorP = 6;  //CAN ID TO INTAKE BALl
   public static final int CoralMotorL = 7; // CAN ID fOR CORAL OUTTAKE   
   public static final int CoralMotorR = 8; // CAN ID FOR CORAL OUTAKE
-  public static final int LiftMotor = 9; // CAN ID FOR elevator lift
+  public static final int liftMotor = 21; // CAN ID FOR elevator lift
   public static final int CSource = 3; // CAN ID FOR elevator lift
 
   }
